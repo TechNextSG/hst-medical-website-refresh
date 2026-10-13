@@ -4,7 +4,7 @@
    v4: the v3 "Carton" design refined (header, floating chat, spacing, product
    images, search bar; see section 14). Every page reads like a clean carton.
    White stock, one solid HST-magenta band, facts in ruled panels, square
-   corners, Noto Sans headings. An alternative to the v2.2 design, built on the
+   corners, Figtree headings. An alternative to the v2.2 design, built on the
    same tested mechanics (menus, EasyCart, phone dock, chat bubble).
    Colours come from GeneratePress Global Colors (Customize > Colors) and sizes
    from Typography, so a swatch change there recolours the whole site.
@@ -35,7 +35,7 @@
 	--hst-line: var(--base, #e2e4e8);
 	--hst-line-2: var(--contrast-3, #d5d8dd);
 	--hst-ok: #1f7a55;
-	--hst-band: 8px; /* the magenta band */
+	--hst-band: 4px; /* the magenta band */
 	--hst-r: 0px; /* square corners everywhere: a carton has no rounded edges */
 	--hst-r-m: 0px;
 	--hst-r-s: 0px;
@@ -44,7 +44,7 @@
 	--hst-shadow-lift: 0 22px 40px -24px rgba(28, 28, 30, .35);
 	--hst-ease: cubic-bezier(.16, 1, .3, 1);
 	--hst-font: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
-	--hst-display: "Noto Sans", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, "Segoe UI", Arial, sans-serif; /* one family for English and the Chinese product names */
+	--hst-display: "Figtree", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, "Segoe UI", Arial, sans-serif; /* Figtree for English; Chinese names fall back to Noto Sans SC or the system CJK face */
 	--hst-stamp: var(--hst-brand);
 	--hst-stamp-hover: var(--hst-brand-deep);
 	/* WP EasyCart reads these */
@@ -92,7 +92,7 @@ a { color: var(--hst-brand-ink); }
 a:hover, a:focus, a:active { color: var(--hst-brand-deep); }
 a:hover, a:focus { text-decoration: none; } /* underlines live in running text (section 2); the site's own "underline links" setting can stay as it is */
 h1, h2, h3, h4, h5, h6 { color: var(--hst-ink); }
-h1, h2, h3, h4, h5, h6, .widget-title { font-family: var(--hst-display); } /* Noto Sans from the GP Font Library; the system font until it is added */
+h1, h2, h3, h4, h5, h6, .widget-title { font-family: var(--hst-display); } /* Figtree from the GP Font Library; the system font until it is added */
 .entry-header h1, .page-header h1 { color: var(--hst-ink); }
 .entry-title a:hover { color: var(--hst-brand-ink); }
 .entry-meta { color: var(--hst-muted); }
@@ -222,7 +222,7 @@ body:is(.page, .single-post):not(.home) .inside-article > .entry-header {
 	padding: clamp(36px, 5vw, 72px) 0 calc(var(--hst-band) + clamp(28px, 4vw, 52px));
 	border-image: linear-gradient(0deg, var(--hst-brand) 0 var(--hst-band), var(--hst-panel) var(--hst-band)) fill 0 / 0 / 0 100vmax;
 }
-body:is(.page, .single-post):not(.home) .inside-article > .entry-header .entry-title { max-width: 20ch; margin: 0; font-size: clamp(34px, 2.6vw + 16px, 56px); font-weight: 900; line-height: 1.04; letter-spacing: -.03em; }
+body:is(.page, .single-post):not(.home) .inside-article > .entry-header .entry-title { max-width: 20ch; margin: 0; font-size: clamp(34px, 2.6vw + 16px, 56px); font-weight: 700; line-height: 1.04; letter-spacing: -.02em; }
 .entry-content > *:first-child { margin-top: 0; }
 .entry-content :is(h2, h3, h4, h5, h6) { margin-top: 1.8em; }
 .entry-content :is(h2, h3, h4, h5, h6):first-child { margin-top: 0; }
@@ -230,7 +230,7 @@ body:is(.page, .single-post):not(.home) .inside-article > .entry-header .entry-t
 .entry-content li { margin-bottom: .35em; }
 .entry-content li::marker { color: var(--hst-brand); }
 .entry-content blockquote { border: 0; border-top: 1px solid var(--hst-ink); border-bottom: 1px solid var(--hst-line-2); background: none; padding: 1.1rem 0; margin: 2rem 0; font-size: 1.15em; font-weight: 600; line-height: 1.45; color: var(--hst-ink); font-style: normal; }
-.entry-content :is(h2, h3) { font-weight: 800; }
+.entry-content :is(h2, h3) { font-weight: 700; }
 .entry-content li::marker { color: var(--hst-brand); }
 .entry-content img { border-radius: 0; }
 .entry-content iframe[src*="youtube"] { display: block; width: 100%; max-width: 900px; height: auto; aspect-ratio: 16 / 9; margin: 0 auto; border: 0; border-radius: 0; box-shadow: var(--hst-shadow); }
@@ -289,7 +289,7 @@ input[type="text"], input[type="email"], input[type="url"], input[type="password
 }
 .home .inside-article > .entry-header { grid-row: 1; margin: 0; padding-top: clamp(28px, 5vw, 72px); text-align: left; }
 .home .entry-title {
-	max-width: 13ch; margin: 0; font-size: clamp(38px, 3.2vw + 14px, 66px); font-weight: 900; line-height: 1.02; letter-spacing: -.035em; color: var(--hst-ink);
+	max-width: 13ch; margin: 0; font-size: clamp(38px, 3.2vw + 14px, 66px); font-weight: 700; line-height: 1.02; letter-spacing: -.025em; color: var(--hst-ink);
 }
 .home .entry-content > h2:first-of-type { /* the first fact row of the carton's information panel */
 	grid-row: 2; max-width: 30ch; margin: 24px 0 0; padding-top: 16px; border-top: 1px solid var(--hst-ink); text-align: left !important;
@@ -351,11 +351,11 @@ input[type="text"], input[type="email"], input[type="url"], input[type="password
 .home .entry-content > h2:not(:first-of-type) { font-size: clamp(24px, 1.4vw + 16px, 32px); text-align: center; }
 .home .entry-content > h2 + p { color: var(--hst-muted); font-size: .95rem; text-align: center; }
 .home .entry-content > h4 {
-	font-size: clamp(24px, 1.2vw + 17px, 34px); font-weight: 800; letter-spacing: -.025em; line-height: 1.12;
+	font-size: clamp(24px, 1.2vw + 17px, 34px); font-weight: 700; letter-spacing: -.025em; line-height: 1.12;
 	margin-top: clamp(56px, 7vw, 104px); margin-bottom: 14px; text-align: center;
 }
 .home .entry-content > h4:not(:has(img))::before { /* the band, as on every carton */
-	content: ""; display: block; width: 44px; height: 6px; margin: 0 auto 18px; background: var(--hst-brand);
+	content: ""; display: block; width: 32px; height: 3px; margin: 0 auto 18px; background: var(--hst-brand);
 }
 .home .entry-content > h4 > span:is(.Y2IQFc, [lang^="zh"]) { display: block; font-size: .6em; font-weight: 600; color: var(--hst-muted); letter-spacing: 0; margin-top: 6px; }
 .home .entry-content > h4 ~ p:not([align]) { text-align: left; }
@@ -400,7 +400,7 @@ input[type="text"], input[type="email"], input[type="url"], input[type="password
 @media (min-width: 901px) {
 	.home .entry-content > h4:not(:has(img)):not(:last-of-type) {
 		grid-column: 1; align-self: start; max-width: none; margin: var(--hst-gap) 0 0 !important; padding-top: 22px; /* !important: beats the centred-column rule above */
-		border-top: 2px solid var(--hst-ink); text-align: left !important; font-size: clamp(28px, 1.6vw + 14px, 40px); /* !important: the editors centred these inline */
+		border-top: 1px solid var(--hst-line-2); text-align: left !important; font-size: clamp(28px, 1.6vw + 14px, 40px); /* !important: the editors centred these inline */
 	}
 	.home .entry-content > h4:not(:has(img)):not(:last-of-type)::before { margin: 0 0 18px; }
 	.home .entry-content > h4:not(:has(img)):not(:last-of-type) > span:is(.Y2IQFc, [lang^="zh"]) { margin-top: 10px; }
@@ -426,14 +426,14 @@ input[type="text"], input[type="email"], input[type="url"], input[type="password
 /* the closing line: a full-width magenta band, white type, left-aligned like a carton's back panel claim */
 .home .entry-content > h4:last-of-type:not(:has(img)) {
 	grid-column: 1 / -1; max-width: none !important; margin: var(--hst-gap) 0 0 !important; padding: clamp(40px, 5vw, 72px) 0;
-	text-align: left !important; color: #fff; font-size: clamp(28px, 2.4vw + 12px, 52px); font-weight: 900; line-height: 1.08; letter-spacing: -.03em;
+	text-align: left !important; color: #fff; font-size: clamp(28px, 2.4vw + 12px, 52px); font-weight: 700; line-height: 1.08; letter-spacing: -.02em;
 	border-image: linear-gradient(var(--hst-brand), var(--hst-brand)) fill 0 / 0 / 0 100vmax;
 }
 .home .entry-content > h4:last-of-type:not(:has(img))::before { display: none; }
 .home .entry-content > h4:last-of-type:not(:has(img)) + * { margin-top: 0; }
 @media (max-width: 900px) {
 	/* phones: one column, everything left-aligned and ruled (the live site centres it all) */
-	.home .entry-content > h4:not(:has(img)):not(:last-of-type) { text-align: left !important; padding-top: 18px; border-top: 2px solid var(--hst-ink); }
+	.home .entry-content > h4:not(:has(img)):not(:last-of-type) { text-align: left !important; padding-top: 18px; border-top: 1px solid var(--hst-line-2); }
 	.home .entry-content > h4:not(:has(img)):not(:last-of-type)::before { margin: 0 0 14px; }
 	.home .entry-content > h4 + p:not([align]) { text-align: left !important; }
 	.home .entry-content > h4:last-of-type:not(:has(img)) { font-size: 28px; padding: 36px 0; }
@@ -548,7 +548,7 @@ li.ec_product_li .ec_product_type1 > .ec_product_categories { order: 2; margin: 
 li.ec_product_li .ec_product_type1 > .ec_product_categories a { color: inherit !important; text-decoration: none !important; }
 li.ec_product_li h3.ec_product_title_type1 a:hover { color: var(--hst-brand-ink) !important; }
 li.ec_product_li .ec_price_container_type1 { order: 3; margin: auto 16px 12px !important; padding: 0 !important; text-align: left !important; }
-li.ec_product_li .ec_price_type1, li.ec_product_li .ec_price_container_type1 .ec_price { color: var(--hst-ink) !important; font-family: var(--hst-display) !important; font-size: 20px !important; font-weight: 800 !important; letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
+li.ec_product_li .ec_price_type1, li.ec_product_li .ec_price_container_type1 .ec_price { color: var(--hst-ink) !important; font-family: var(--hst-display) !important; font-size: 20px !important; font-weight: 700 !important; letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
 li.ec_product_li .ec_list_price_type1 { color: var(--hst-muted) !important; font-size: 14px !important; }
 li.ec_product_li .ec_product_type1 > :is(.ec_out_of_stock, .ec_seasonal_mode) { order: 4; margin: 0 16px 10px !important; text-align: left !important; font-size: 13px; color: var(--hst-muted); }
 li.ec_product_li .ec_product_type1 > .ec_product_addtocart_container { order: 4; width: auto !important; margin: 0 16px !important; padding: 0 !important; text-align: left !important; }
@@ -629,11 +629,11 @@ li.ec_product_li .ec_product_successfully_added_container, li.ec_product_li .ec_
 .ec_details_main_image img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: contain; margin: 0 auto; border-radius: 0 !important; mix-blend-mode: multiply; }
 .ec_details_thumbnails img, .ec_details_thumbnail img { border-radius: 0; border: 1px solid var(--hst-line); }
 .ec_details_title, h1.ec_details_title {
-	color: var(--hst-ink) !important; font-family: var(--hst-display) !important; font-size: clamp(28px, 1.5vw + 20px, 44px) !important; font-weight: 900 !important;
+	color: var(--hst-ink) !important; font-family: var(--hst-display) !important; font-size: clamp(28px, 1.5vw + 20px, 44px) !important; font-weight: 700 !important;
 	line-height: 1.1 !important; letter-spacing: -.025em !important; text-align: left !important; text-transform: none !important; margin: 0 0 12px !important;
 }
 .ec_title_divider { display: none !important; }
-.ec_details_price, .ec_details_price > .ec_product_price { color: var(--hst-brand-ink) !important; font-family: var(--hst-display) !important; font-size: 32px !important; font-weight: 800 !important; font-variant-numeric: tabular-nums; margin: 0 0 6px !important; }
+.ec_details_price, .ec_details_price > .ec_product_price { color: var(--hst-brand-ink) !important; font-family: var(--hst-display) !important; font-size: 32px !important; font-weight: 700 !important; font-variant-numeric: tabular-nums; margin: 0 0 6px !important; }
 .ec_details_right { border-top: 1px solid var(--hst-ink); padding-top: 22px !important; } /* the information panel starts on a ruled line */
 .ec_details_price > .ec_product_old_price { color: var(--hst-muted) !important; font-size: 18px !important; }
 .ec_details_rating, .ec_details_review_holder { display: none !important; }
@@ -678,7 +678,7 @@ ul.ec_details_tabs > li.ec_details_tab.ec_active { color: var(--hst-ink) !import
 .ec_details_customer_reviews_left > h3, .ec_details_customer_reviews_form > .ec_details_customer_reviews_form_holder > h3 { color: var(--hst-ink) !important; }
 .ec_details_related_products_area { margin-top: clamp(40px, 6vw, 72px) !important; }
 .ec_details_related_products_area { padding-top: clamp(28px, 4vw, 44px); border-top: 1px solid var(--hst-ink); }
-.ec_details_related_products_area > h3 { color: var(--hst-ink) !important; font-family: var(--hst-display) !important; font-weight: 800 !important; text-align: left !important; font-size: clamp(24px, 1vw + 18px, 30px) !important; margin-bottom: 20px !important; }
+.ec_details_related_products_area > h3 { color: var(--hst-ink) !important; font-family: var(--hst-display) !important; font-weight: 700 !important; text-align: left !important; font-size: clamp(24px, 1vw + 18px, 30px) !important; margin-bottom: 20px !important; }
 @media (min-width: 601px) { ul.ec_details_related_products { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); } }
 @media (min-width: 768px) and (max-width: 1023px) {
 	.ec_details_content { gap: 28px !important; }
@@ -768,7 +768,7 @@ table.ec_cartitem_quantity_table > tbody > tr > td > div.ec_cartitem_update_butt
 	background: linear-gradient(var(--hst-brand), var(--hst-brand)) 0 100% / 100% 6px no-repeat, var(--hst-panel);
 }
 .generate-columns-container .entry-header, .generate-columns-container .entry-summary, .generate-columns-container .entry-content { padding: 0; margin: 0; }
-.generate-columns-container h2.entry-title { font-size: 20px; font-weight: 800; line-height: 1.25; letter-spacing: -.015em; margin-bottom: 8px; }
+.generate-columns-container h2.entry-title { font-size: 20px; font-weight: 700; line-height: 1.25; letter-spacing: -.015em; margin-bottom: 8px; }
 .generate-columns-container h2.entry-title a { color: var(--hst-ink); }
 .generate-columns-container h2.entry-title a:hover { color: var(--hst-brand-ink); }
 .generate-columns-container .entry-meta { order: -1; font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--hst-muted); margin: 0 0 8px; }
@@ -1019,3 +1019,72 @@ body.page:not(.home) .featured-image.page-header-image img { max-height: 440px; 
 /* phones: the Filters button and the sort menu as one flat row */
 .ec_product_page_filters_toggle { border: 0; background: var(--hst-panel); min-height: 46px; }
 .ec_product_page_sort select.ec_sort_menu { border: 0 !important; background-color: var(--hst-panel) !important; height: 46px !important; }
+
+/* ---------- 14f. The hero, v4: a magenta field ----------
+   The right half of the hero is a solid HST-magenta field running to the edge of the screen; the product collage
+   floats across its left edge on a white card with a soft shadow. The title and the Kowa line sit on white at the
+   left. The Ask Jamie paragraphs are hidden here because Jamie now floats in the corner of every page (14b). */
+.home .entry-content > :is(h4, p):has(> a[href*="/chat"] > img),
+.home .entry-content > :is(h4, p):has(> a[href*="/chat"] > img) + :is(h4, p) { display: none !important; }
+.home .inside-article::before { border-image: none; background: none; grid-row: 1 / span 3; }
+.home .inside-article > .entry-header { padding-top: clamp(36px, 5vw, 80px); }
+.home .entry-title { font-size: clamp(38px, 3vw + 16px, 64px); font-weight: 700; letter-spacing: -.025em; line-height: 1.04; max-width: 12ch; }
+.home .entry-content > h2:first-of-type {
+	margin-top: 22px; padding-top: 0; border-top: 0; max-width: 26ch; font-size: clamp(19px, .8vw + 14px, 24px); font-weight: 500; color: var(--hst-ink-2);
+}
+.home .entry-content > h2:first-of-type::before { /* a short magenta rule leads into the line */
+	content: ""; display: block; width: 48px; height: 3px; margin-bottom: 18px; background: var(--hst-brand);
+}
+.home .inside-article > .featured-image.page-header-image {
+	position: relative; z-index: 1; background: #fff; border: 0;
+	box-shadow: 0 30px 60px -28px rgba(60, 0, 30, .55), 0 12px 24px -16px rgba(28, 28, 30, .25);
+}
+.home .inside-article::after { /* the magenta field */
+	content: ""; z-index: -1; grid-row: 1 / span 3; grid-column: 1 / -1;
+	margin-top: calc(-1 * clamp(20px, 3vw, 36px));
+	background: var(--hst-brand); border-image: linear-gradient(var(--hst-brand), var(--hst-brand)) fill 0 / 0 / 0 100vmax 0 0;
+}
+@media (min-width: 901px) {
+	.home .inside-article::after { grid-column: 2; margin-left: 22%; }
+	.home .inside-article > .featured-image.page-header-image { grid-row: 1 / span 3; margin: clamp(40px, 5vw, 80px) 0 clamp(40px, 5vw, 80px); }
+	.home .entry-content > h2:first-of-type { margin-bottom: clamp(48px, 6vw, 96px); }
+}
+@media (max-width: 900px) {
+	/* phones: title and line on white, then the collage on a magenta field */
+	.home .inside-article::after { grid-row: 4; grid-column: 1 / -1; margin: 0 calc(-1 * var(--hst-gutter, 20px)); border-image: none; }
+	.home .inside-article > .featured-image.page-header-image { margin: 28px 0 28px; }
+	.home .entry-content > h2:first-of-type { margin-bottom: 28px; }
+}
+
+/* ---------- 14g. Awards: their own row of three ---------- */
+.home .entry-content > p:has(> a ~ a > img):not([align]) {
+	grid-column: 1 / -1 !important; display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 2.4vw, 32px);
+	max-width: 1040px !important; width: 100%; margin: clamp(28px, 3vw, 40px) auto 0 !important; padding: 0; border: 0;
+}
+.home .entry-content > p:has(> a ~ a > img):not([align]) > a { flex: none; display: block; background: #fff; }
+.home .entry-content > p:has(> a ~ a > img):not([align]) img { aspect-ratio: 1; padding: 0; object-fit: contain; mix-blend-mode: normal; transition: transform .35s var(--hst-ease); }
+.home .entry-content > p:has(> a ~ a > img):not([align]) > a:hover img { transform: translateY(-4px); }
+
+/* ---------- 14h. The Google rating and "Follow @hstmedical" side by side ----------
+   CSS order only: the badge and the Telegram button are moved next to each other into one ruled row; every block
+   after the badge keeps its own order behind them. */
+.home .entry-content > .ti-widget ~ * { order: 2; }
+.home .entry-content > .ti-widget, .home .entry-content > h4:has(> a > img.size-full) { order: 1; }
+.home .entry-content > .ti-widget {
+	grid-column: 1 !important; justify-content: center !important; align-items: center; align-self: stretch; margin: clamp(36px, 4vw, 56px) 0 0 !important;
+	padding: 22px 0; border-top: 1px solid var(--hst-line); border-bottom: 1px solid var(--hst-line);
+}
+.home .entry-content > h4:has(> a > img.size-full) {
+	grid-column: 2 !important; display: flex; align-items: center; justify-content: center; align-self: stretch;
+	margin: clamp(36px, 4vw, 56px) 0 0 !important; padding: 22px 0; max-width: none !important; border-top: 1px solid var(--hst-line); border-bottom: 1px solid var(--hst-line);
+}
+.home .entry-content > h4:has(> a > img.size-full) > a > img.size-full { max-width: min(100%, 300px); }
+@media (max-width: 900px) {
+	.home .entry-content > .ti-widget, .home .entry-content > h4:has(> a > img.size-full) { grid-column: 1 / -1 !important; }
+	.home .entry-content > h4:has(> a > img.size-full) { margin-top: 0 !important; border-top: 0; }
+}
+@media (max-width: 900px) {
+	/* phones: every homepage block takes the full column (auto side margins would shrink short headings off-centre) */
+	.home .inside-article > .entry-content > * { margin-left: 0 !important; margin-right: 0 !important; }
+	.home .entry-content > h4:has(> a > img.size-full) > a > img.size-full { max-width: 220px; }
+}

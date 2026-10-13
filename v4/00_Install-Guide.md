@@ -7,9 +7,10 @@ GeneratePress settings files, one CSS file and the graphics. Together they resty
 within its classic GeneratePress setup. About 20 minutes to install.
 
 **The look:** a clean Japanese medicine carton. White pages, one solid HST-magenta band, facts in ruled panels,
-square corners and heavy Noto Sans headings.
-* The homepage gets a two-column hero: the page title, the "We have joined Kowa" line and the Ask Jamie link sit
-  beside the product collage, on a grey panel closed by the magenta band.
+square corners and Figtree headings.
+* The homepage gets a two-column hero. The page title and the "We have joined Kowa" line sit on white, and the
+  product collage floats on a white card across the edge of a solid magenta field.
+* The awards become a row of three, and the Google rating sits beside "Follow @hstmedical".
 * Every following homepage section becomes a ruled two-column spread.
 * The best sellers become one sideways-scrolling shelf, not 85 cards down the page.
 * The store's category sidebar becomes a single bar across the top.
@@ -19,6 +20,7 @@ square corners and heavy Noto Sans headings.
 text, scripts, templates or plugins.
 
 **New in v4:**
+* Lighter type and lines: Figtree headings and hairline rules.
 * A calmer header. The logo sits on one balanced row with the menu, and "Online store" is a compact button with a bag icon.
 * Jamie (the AI chat) floats in the bottom-right corner of every page. "AI Chat" leaves the desktop menu row but stays in the phone menu.
 * Tighter spacing throughout.
@@ -61,7 +63,7 @@ product data, page content, and every GeneratePress setting other than the colou
 4. **Heading font, served from hstmedical.com.**
    1. Appearance › GeneratePress: activate the **Font Library** module.
    2. Open Appearance › Font Library and click **Allow access to Google Fonts**.
-   3. Click **Install Google Fonts**, pick **Noto Sans** with the weights **600, 700, 800 and 900**, then
+   3. Click **Install Google Fonts**, pick **Figtree** with the weights **500, 600 and 700**, then
       **Install Selected**.
    4. Open the installed font, set **Font Display** to **swap** and save.
 
@@ -94,6 +96,11 @@ The live site already loads HST's DocuChat chatbot ("Jamie") on every page. v4 o
 corner (above the phone bar on phones) and frames it. Nothing in DocuChat is changed. If the bubble ever disappears,
 check that the DocuChat script is still enabled and that "Visible URLs" in DocuChat is empty (meaning all pages).
 
+## The homepage's Ask Jamie paragraphs
+
+The two Ask Jamie paragraphs at the top of the Home page content (the avatar link and the text link) are hidden on the
+homepage, because Jamie now floats in the corner of every page. They stay in the editor and come back if the v4 CSS is removed.
+
 ## To roll back
 
 Re-import the backup, paste the old Additional CSS back, restore the Home and Online store images
@@ -107,8 +114,7 @@ Re-import the backup, paste the old Additional CSS back, restore the Home and On
   |---|---|
   | Title | The page title |
   | Kowa line | The first H2 in the content |
-  | Ask Jamie | The paragraph holding the chat avatar link and the paragraph after it |
-  | Collage | The Featured image |
+    | Collage | The Featured image |
 
   * Every H4 without an image starts a two-column spread: the heading on the left, the next paragraph,
     awards, panels or video on the right.
