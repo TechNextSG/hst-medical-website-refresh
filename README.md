@@ -19,3 +19,10 @@ It is 2 GeneratePress settings files, 1 CSS file and the graphics. It adds no sc
 | `graphics/` | Home-page panels, offer banner (JPG + WebP), trimmed logo |
 
 Back up first (GeneratePress Import / Export > Export, plus the current Additional CSS). Full steps are in the install guide.
+## Alternative design: v3 "The Carton" (13 October 2026)
+
+A second design option, offered beside v2.2. Install one or the other, not both. Same delivery method: 2 GeneratePress settings files, 1 CSS file and the graphics; no scripts, templates or plugins, and every word stays editable in WordPress.
+
+- **Website mockup, v3 (whole site):** https://technextsg.github.io/hst-medical-website-refresh/mockup-v3/
+- **Files:** [v3/](v3/) · **Install guide:** [v3/00_Install-Guide.md](v3/00_Install-Guide.md)
+- **Download v3 as one zip:** [download/HST-Medical_Website-Redesign_v3_2026-10-13.zip](download/HST-Medical_Website-Redesign_v3_2026-10-13.zip)

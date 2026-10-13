@@ -1,0 +1,108 @@
+# HST Medical website redesign v3 ("The Carton"): install guide
+
+**For:** McGallen & Bolden · **From:** TechNext · **Date:** 13 October 2026
+
+v3 is an **alternative design** to the v2.2 refresh. Install one or the other, not both. Like v2.2, it is two
+GeneratePress settings files, one CSS file and the graphics. Together they restyle every page of hstmedical.com
+within its classic GeneratePress setup. About 20 minutes to install.
+
+**The look:** a clean Japanese medicine carton. White pages, one solid HST-magenta band, facts in ruled panels,
+square corners and heavy Noto Sans headings.
+* The homepage gets a two-column hero: the page title, the "We have joined Kowa" line and the Ask Jamie link sit
+  beside the product collage, on a grey panel closed by the magenta band.
+* Every following homepage section becomes a ruled two-column spread.
+* The best sellers become one sideways-scrolling shelf, not 85 cards down the page.
+* The store's category sidebar becomes a single bar across the top.
+* Pages and posts open on a grey title panel.
+
+**Every word stays in WordPress:** the CSS only places and styles what the editors already wrote. It adds no
+text, scripts, templates or plugins.
+
+## Files
+
+| File | What it is |
+|---|---|
+| `hst-gp-1-global-colors.json` | GeneratePress colour palette (import) |
+| `hst-gp-2-typography.json` | GeneratePress type scale (import) |
+| `hst-refresh.min.css` | The CSS to paste into Additional CSS. `hst-refresh.css` is the same CSS in readable form, for future edits. |
+| `graphics/` | Five health-goal panels, the offer banner (JPG and WebP) and a trimmed logo |
+
+**Not changed:** templates, plugins, hosting, EasyCart settings, the Jamie chatbot (DocuChat), the UnoDock bar,
+product data, page content, and every GeneratePress setting other than the colour palette and the type scale.
+
+## Before you start
+
+* **Back up first, and keep the backup.**
+  * Appearance › GeneratePress › Import / Export › Export (type: All).
+  * Copy the current Additional CSS into a text file.
+  * Note the current logo and the images on the Home and Online store pages.
+  * Each import takes effect immediately and has no undo button. Re-importing this backup is the undo.
+* **Do steps 2 to 7 in one sitting** (or in maintenance mode, or on a staging copy first).
+* **Mobile menu breakpoint:** the header styles assume the live setting of 800 px (GP Premium › Menu Plus).
+
+## Install
+
+1. **Back up** as above.
+2. **Import the colour palette.** Appearance › GeneratePress › Import / Export › Import:
+   `hst-gp-1-global-colors.json`. This replaces only the Global Colors list:
+   * the 7 existing colour names get new values;
+   * 4 colours are added: Accent 2, Accent deep, Accent tint, Slate.
+3. **Import the type scale.** Same screen: `hst-gp-2-typography.json`. This replaces only the Typography list.
+4. **Heading font, served from hstmedical.com.**
+   1. Appearance › GeneratePress: activate the **Font Library** module.
+   2. Open Appearance › Font Library and click **Allow access to Google Fonts**.
+   3. Click **Install Google Fonts**, pick **Noto Sans** with the weights **600, 700, 800 and 900**, then
+      **Install Selected**.
+   4. Open the installed font, set **Font Display** to **swap** and save.
+
+   If you skip this step, headings use the device's own font and nothing breaks.
+5. **Add the CSS.** Customize › Additional CSS: replace the contents with `hst-refresh.min.css`.
+   * WordPress's old built-in checker reports "errors" for current CSS such as `:is()` and `:has()`. These are
+     false alarms.
+   * Tick **"Update anyway, even though it might break your site?"** and Publish.
+6. **Graphics** (Media › Add New, WebP preferred), from `graphics/`:
+   * **Home page, "Shop by health goals":** replace `hst_newpanels2.001` with `panel-pain-relief` and
+     `hst_newpanels2.002` with `panel-cold-cough-flu`, at Full size. Keep their links.
+     * Three more panels are ready for later: `panel-beauty-youth`, `panel-kids-vitamins` and `panel-wellness`.
+   * **Home and Online store pages:** replace the `Brown-and-White-Simple-Fashion-Sale-Banner-2` image with
+     `promo-20-off`, linked to /store/.
+     * Alt text: "Storewide: S$20 off when you buy S$80 and above of HST Medical products. Terms and conditions
+       apply."
+     * Swap or remove the banner whenever the offer changes or ends.
+   * Optional: Customize › Site Identity › Logo → `hst-logo-trimmed.png`.
+7. **Clear the cache:** purge Fast Velocity Minify.
+8. **Check** these pages on a phone and on desktop:
+   * Home, Pain Relief, Cold Cough & Flu, Online store, a product with options, the cart and checkout, Blog and a
+     post.
+   * The sticky menu after scrolling.
+   * The phone menu open.
+   * The phone bar with the Jamie bubble above it.
+
+## To roll back
+
+Re-import the backup, paste the old Additional CSS back, restore the Home and Online store images
+(Page › Revisions) and the logo, then purge Fast Velocity Minify.
+
+## Notes
+
+* **The homepage layout depends on blocks the editors already have:**
+
+  | Hero element | Where it comes from |
+  |---|---|
+  | Title | The page title |
+  | Kowa line | The first H2 in the content |
+  | Ask Jamie | The paragraph holding the chat avatar link and the paragraph after it |
+  | Collage | The Featured image |
+
+  * Every H4 without an image starts a two-column spread: the heading on the left, the next paragraph,
+    awards, panels or video on the right.
+  * The **last** H4 on the page becomes the closing magenta band.
+  * Remove or reorder blocks and the layout still holds; each block just takes the next free place.
+* **Colours:** all from Customize › Colors (Global Colors). Accent #d4006a is the magenta band and buttons. It is
+  close to the logo's #DB026D and passes contrast on white.
+* **Square corners everywhere**, by design: every `border-radius` in the CSS is 0, including the buttons, inputs
+  and the plugin controls the CSS restyles.
+* **Browser support:** some layout rules use `:has()` (Chrome and Edge 105+, Safari 15.4+, Firefox 121+). In older
+  browsers the pages still work, with simpler layouts.
+* **After an EasyCart or GeneratePress update,** check the store, a product with options, the cart and the
+  checkout. Tested with GeneratePress 3.6.1, GP Premium 2.5.6 and WP EasyCart 6.0.3.
