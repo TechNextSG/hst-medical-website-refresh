@@ -760,5 +760,25 @@ window.wpeasycart_order_source = {"cookie":"wpec_source","days":90,"session":30,
 //# sourceURL=wpeasycart_order_source_js-js-before
 </script>
 <script data-wp-strategy="defer" defer id="wpeasycart_order_source_js-js" src="https://cdn.staticdelivr.com/wp/plugins/wp-easycart/tags/6.0.4/design/theme/base-responsive-v3/ec-order-source.js"></script>
-<div style="position:fixed;left:12px;bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:2147483647;font:600 12px/1 system-ui,sans-serif;background:rgba(31,41,51,.88);color:#fff;padding:8px 12px;border-radius:999px;pointer-events:none">Design mockup &middot; v4</div><a class="hst-chat-fab" id="docuchat-bubble" href="https://hstmedical.com/chat/" target="_blank" rel="noopener" aria-label="Chat with Jamie, our AI assistant"><img src="https://s3.eu-central-1.amazonaws.com/docuchatv2/b9dab16b-f014-48e1-a500-f4ff13968f8e/avatar.jpg?v=c15d46c6-77b7-40b9-b09c-d767fb019ffa" alt="" width="56" height="56"></a><!-- mockup stand-in for the live DocuChat "Jamie" bubble (the live site loads the real widget) --></body> 
+<div style="position:fixed;left:12px;bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:2147483647;font:600 12px/1 system-ui,sans-serif;background:rgba(31,41,51,.88);color:#fff;padding:8px 12px;border-radius:999px;pointer-events:none">Design mockup &middot; v4</div><a class="hst-chat-fab" id="docuchat-bubble" href="https://hstmedical.com/chat/" target="_blank" rel="noopener" aria-label="Chat with Jamie, our AI assistant"><img src="https://s3.eu-central-1.amazonaws.com/docuchatv2/b9dab16b-f014-48e1-a500-f4ff13968f8e/avatar.jpg?v=c15d46c6-77b7-40b9-b09c-d767fb019ffa" alt="" width="56" height="56"></a><!-- mockup stand-in for the live DocuChat "Jamie" bubble (the live site loads the real widget) --><!--hst-mockup-v4--><style>
+.hst-chat-panel{position:fixed;right:22px;bottom:96px;z-index:9999;width:min(400px,calc(100vw - 28px));height:min(620px,calc(100vh - 130px));background:#fff;box-shadow:0 30px 60px -20px rgba(28,28,30,.5),0 0 0 1px #e2e4e8;display:none;flex-direction:column}
+.hst-chat-panel.open{display:flex}
+.hst-chat-panel header{display:flex;align-items:center;justify-content:space-between;padding:0 8px 0 16px;height:52px;background:#d4006a;color:#fff;font:700 15px/1 Figtree,system-ui,sans-serif}
+.hst-chat-panel header button{all:unset;cursor:pointer;width:40px;height:40px;display:grid;place-items:center;font:400 26px/1 system-ui;color:#fff}
+.hst-chat-panel iframe{flex:1;width:100%;border:0}
+@media (max-width:782px){.hst-chat-panel{right:14px;bottom:calc(140px + env(safe-area-inset-bottom,0px));height:min(560px,calc(100vh - 200px))}}
+</style><script>/* mockup only: on hstmedical.com EasyCart sorts on the server and DocuChat opens its own chat window */
+(function(){function go(){
+var p=location.pathname;document.querySelectorAll('.ec_product_sidebar_link_item a').forEach(function(a){if(a.getAttribute('href')===p){a.classList.add('ec_selected');a.setAttribute('aria-current','page');}});
+var sel=document.getElementById('sortfield'),list=document.getElementById('ec_store_product_list');
+if(sel&&list){var orig=[].slice.call(list.children);sel.removeAttribute('onchange');sel.addEventListener('change',function(){
+ var v=sel.value,it=orig.slice(),t=function(li){var h=li.querySelector('.ec_product_title_type1');return h?h.textContent.trim().toLowerCase():'';},id=function(li){return parseInt((li.id||'').replace(/\D/g,''),10)||0;};
+ if(v==='3')it.sort(function(a,b){return t(a).localeCompare(t(b));});else if(v==='5')it.sort(function(a,b){return id(b)-id(a);});
+ it.forEach(function(li){list.appendChild(li);});});}
+var fab=document.querySelector('.hst-chat-fab');if(fab){var pan;fab.addEventListener('click',function(e){e.preventDefault();
+ if(!pan){pan=document.createElement('div');pan.className='hst-chat-panel';pan.setAttribute('role','dialog');pan.setAttribute('aria-label','Chat with Jamie');
+  pan.innerHTML='<header>Jamie, HST Medical\'s AI assistant<button type="button" aria-label="Close chat">&times;</button></header><iframe title="Chat with Jamie" src="https://app.docuchat.io/chat/embed/b9dab16b-f014-48e1-a500-f4ff13968f8e?cta=true"></iframe>';
+  document.body.appendChild(pan);pan.querySelector('button').addEventListener('click',function(){pan.classList.remove('open');fab.setAttribute('aria-expanded','false');});}
+ var o=pan.classList.toggle('open');fab.setAttribute('aria-expanded',o?'true':'false');});}
+}if(document.readyState!=='loading')go();else document.addEventListener('DOMContentLoaded',go);})();</script></body> 
 </html>

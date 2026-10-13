@@ -24,7 +24,8 @@ text, scripts, templates or plugins.
 * A calmer header. The logo sits on one balanced row with the menu, and "Online store" is a compact button with a bag icon.
 * Jamie (the AI chat) floats in the bottom-right corner of every page. "AI Chat" leaves the desktop menu row but stays in the phone menu.
 * Tighter spacing throughout.
-* Bigger product images with no borders.
+* Bigger product images with no borders, and products tagged "Popular!" first in every list.
+* Wide page banners (1640 × 624, the Facebook-cover shape) for the main pages and store categories.
 * No Quick view button floating over the product cards.
 * A clean search box with a joined button, and the categories as flat chips.
 
@@ -38,6 +39,7 @@ All v4 changes are in the last section of the CSS ("14. v4 refinements"), so the
 | `hst-gp-2-typography.json` | GeneratePress type scale (import) |
 | `hst-refresh.min.css` | The CSS to paste into Additional CSS. `hst-refresh.css` is the same CSS in readable form, for future edits. |
 | `graphics/` | Five health-goal panels, the offer banner (JPG and WebP) and a trimmed logo |
+| `graphics/banners/` | 11 wide page banners (JPG and WebP) |
 
 **Not changed:** templates, plugins, hosting, EasyCart settings, the Jamie chatbot (DocuChat), the UnoDock bar,
 product data, page content, and every GeneratePress setting other than the colour palette and the type scale.
@@ -81,6 +83,25 @@ product data, page content, and every GeneratePress setting other than the colou
      * Alt text: "Storewide: S$20 off when you buy S$80 and above of HST Medical products. Terms and conditions
        apply."
      * Swap or remove the banner whenever the offer changes or ends.
+   * **Page banners** (`graphics/banners/`): set each as the page's **Featured image** (Pages › the page › Featured
+     image). Upload the WebP.
+
+     | Banner | Pages |
+     |---|---|
+     | `banner-pain-relief` | Pain Relief; store categories Pain relief, Rheuma-Salve®, Heritage® External Pain Relief |
+     | `banner-cold-cough-flu` | Cold, Cough & Flu; store category Cough, Cold & Flu |
+     | `banner-look-good-feel-young` | Look good, feel young; store category Beauty supplements |
+     | `banner-halal` | Store category Halal |
+     | `banner-store` | Online store, Cart, Account, Where to buy, Promotions, and every other store category |
+     | `banner-about` | About |
+     | `banner-contact` | Contact, Reseller |
+     | `banner-shipping` | Shipping |
+     | `banner-joinhst` | Jobs |
+     | `banner-chat` | AI Chat |
+     | `banner-info` | Medical disclaimer, Privacy policy, Resources |
+
+     The store category pages (for example /store/pain-relief/) are ordinary WordPress pages, so their banner is set
+     the same way.
    * Optional: Customize › Site Identity › Logo → `hst-logo-trimmed.png`.
 7. **Clear the cache:** purge Fast Velocity Minify.
 8. **Check** these pages on a phone and on desktop:
@@ -89,6 +110,12 @@ product data, page content, and every GeneratePress setting other than the colou
    * The sticky menu after scrolling.
    * The phone menu open.
    * The phone bar with the Jamie bubble above it.
+
+## Popular products first
+
+Products whose WP EasyCart label is "Popular!" (the red label) are shown first in every product list while the default
+sort ("Most Viewed") is chosen. To change which products lead, change their label in EasyCart. The other sort choices
+keep EasyCart's own order.
 
 ## The floating chat (Jamie)
 

@@ -1088,3 +1088,22 @@ body.page:not(.home) .featured-image.page-header-image img { max-height: 440px; 
 	.home .inside-article > .entry-content > * { margin-left: 0 !important; margin-right: 0 !important; }
 	.home .entry-content > h4:has(> a > img.size-full) > a > img.size-full { max-width: 220px; }
 }
+
+/* ---------- 14i. Popular products first ----------
+   Products tagged "Popular!" in WP EasyCart (the red #dd3333 label) move to the front of every product list while the
+   default sort ("Most Viewed") is chosen; Title A-Z, Newest and Best Rating keep EasyCart's own order. To change which
+   products lead, change their label in EasyCart (Products > the product > Product label). */
+.ec_product_page:has(#sortfield option[value="7"]:checked) #ec_store_product_list > li.ec_product_li:has(.ec_tag1[style*="#dd3333"]),
+.ec_product_page:not(:has(#sortfield)) #ec_store_product_list > li.ec_product_li:has(.ec_tag1[style*="#dd3333"]),
+ul.ec_details_related_products > li.ec_product_li:has(.ec_tag1[style*="#dd3333"]) { order: -1; }
+
+/* ---------- 14j. The sort menu: flat, square, with a clear focus ring ---------- */
+.ec_product_page_sort select.ec_sort_menu { appearance: none; -webkit-appearance: none; padding: 0 40px 0 14px !important; color: var(--hst-ink) !important; font-weight: 600 !important;
+	background: var(--hst-panel) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231c1c1e' stroke-width='2.4' stroke-linecap='square'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") right 14px center / 14px 14px no-repeat !important; }
+.ec_product_page_sort select.ec_sort_menu:focus { box-shadow: none !important; outline: 2px solid var(--hst-ink); outline-offset: 2px; }
+.ec_product_sidebar_search input[type="text"]:focus { box-shadow: none !important; }
+
+/* ---------- 14k. Page banners: the wide page images (1640 x 624) run the full column ---------- */
+body:not(.home):not(.single-post) .featured-image.page-header-image { margin-bottom: clamp(24px, 3vw, 40px); }
+body:not(.home):not(.single-post) .featured-image.page-header-image img { width: 100%; max-width: none; max-height: none; height: auto; }
+body:not(.home):not(.single-post) .inside-article:has(> .featured-image.page-header-image) { max-width: 1200px; }
