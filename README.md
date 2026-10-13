@@ -5,6 +5,7 @@
 This package restyles hstmedical.com within its existing classic GeneratePress + WP EasyCart setup.
 It is 2 GeneratePress settings files, 1 CSS file and the graphics. It adds no scripts and makes no template or plugin changes.
 
+- **Website mockup (new design on the real pages):** https://technextsg.github.io/hst-medical-website-refresh/mockup/
 - **Supporting documents (view online):** https://technextsg.github.io/hst-medical-website-refresh/
 - **Install guide:** [00_Install-Guide.md](00_Install-Guide.md) (about 20 minutes)
 - **Download everything as one zip:** [download/HST-Medical_Website-Refresh_v2.2_2026-10-12.zip](download/HST-Medical_Website-Refresh_v2.2_2026-10-12.zip)
