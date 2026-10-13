@@ -26,3 +26,11 @@ A second design option, offered beside v2.2. Install one or the other, not both.
 - **Website mockup, v3 (whole site):** https://technextsg.github.io/hst-medical-website-refresh/mockup-v3/
 - **Files:** [v3/](v3/) · **Install guide:** [v3/00_Install-Guide.md](v3/00_Install-Guide.md)
 - **Download v3 as one zip:** [download/HST-Medical_Website-Redesign_v3_2026-10-13.zip](download/HST-Medical_Website-Redesign_v3_2026-10-13.zip)
+
+## Latest: v4 (13 October 2026)
+
+v3 refined after review: a calmer header, Jamie (the AI chat) floating in the bottom-right corner, tighter spacing, bigger borderless product images, no Quick view button, and a clean search and category bar.
+
+- **Website mockup, v4 (whole site):** https://technextsg.github.io/hst-medical-website-refresh/mockup-v4/
+- **Files:** [v4/](v4/) · **Install guide:** [v4/00_Install-Guide.md](v4/00_Install-Guide.md)
+- **Download v4 as one zip:** [download/HST-Medical_Website-Redesign_v4_2026-10-13.zip](download/HST-Medical_Website-Redesign_v4_2026-10-13.zip)
